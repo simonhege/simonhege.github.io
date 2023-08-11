@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="container">
+  <h2>Recent posts</h2>
+  {{ range first 5 (where (where .Site.Pages "Section" "blog") "IsSection" false ) }}
+  <article>
+    <header>
+      <h3>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a> 
+      </h3>
+    </header>
+    <p><em>Posted on {{ .Date.Format "January 2, 2006" }}</em></p>
+    <p>{{ .Summary }}</p>
+  </article>
+  {{ end }}
+
+</div>
+{{ end }}

@@ -1,0 +1,10 @@
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+/* The Pygments highlighter comes with its own styles. */
+.highlight pre {
+  background-color: inherit;
+  color: inherit;
+  padding: 0.5em;
+  font-size: .875rem;
+}
