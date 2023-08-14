@@ -5,8 +5,25 @@
     <p><em>Posted on {{ .Date.Format "January 2, 2006" }}</em></p>
   </header>
 
-  <div>
+  <div class="row">
+    <div class="col-lg-8">
     {{ .Content }}
+    </div>
+    <div class="col-lg-4">
+      {{ $related := .Site.RegularPages.Related . | first 5 }}
+      {{ with $related }}
+      <div class="card">
+        <div class="card-header">
+          See Also
+        </div>  
+        <ul class="list-group list-group-flush">
+        {{ range . }}
+        <li class="list-group-item"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </div>
   </div>
 </div>
 {{ end }}
