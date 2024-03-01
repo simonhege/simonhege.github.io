@@ -63,6 +63,9 @@ title = 'simonhege.fr'
 [[module.mounts]]
   source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
   target = "assets/js/vendor/bootstrap.min.js"
+[[module.mounts]]
+  source = "node_modules/mermaid/dist/mermaid.min.js"
+  target = "assets/js/vendor/mermaid.min.js"
 
 
 

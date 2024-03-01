@@ -1,6 +1,7 @@
 <!-- Vendor JS Files -->
 {{ $bootstrap := resources.Get "js/vendor/bootstrap.min.js" }}
-{{ $js := slice $bootstrap | resources.Concat "js/bundle.js" | minify | fingerprint }}
+{{ $mermaid := resources.Get "js/vendor/mermaid.min.js" }}
+{{ $js := slice $bootstrap $mermaid | resources.Concat "js/bundle.js" | minify | fingerprint }}
 
 <script src="{{$js.RelPermalink}}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
 
