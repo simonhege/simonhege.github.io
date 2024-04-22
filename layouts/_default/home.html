@@ -1,17 +1,53 @@
 {{ define "main" }}
 <div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <h1>{{ .Site.Params.Description }}</h1>
+      {{ .Content }}
+    </div>
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-header">
+          Who am I?
+        </div>  
+        <div class="card-body">
+          <img src="{{ .Site.Params.Picture }}" class="rounded float-start me-2" style="height:5em; width: 5em;">
+          <h5 class="card-title">{{ .Site.Params.Name }}</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">
+            {{ .Site.Params.Subtitle }}
+          </h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary">
+            {{ .Site.Params.Job }} at <a href="{{ .Site.Params.CompanyLink }}" target="_blank">{{ .Site.Params.Company }}</a>
+          </h6>
+          {{ if .Site.Params.Github }}<a href="https://github.com/{{ .Site.Params.Github }}/" class="card-link" target="_blank">
+            <i class="bi bi-github"></i> GitHub
+          </a>{{ end }}
+          {{ if .Site.Params.Twitter }}<a href="https://twitter.com/{{ .Site.Params.Twitter }}" class="card-link" target="_blank">
+            <i class="bi bi-twitter-x"></i> Twitter
+          </a>{{ end }}
+          {{ if .Site.Params.LinkedIn }}<a href="https://linkedin.com/in/{{ .Site.Params.LinkedIn }}" class="card-link" target="_blank">
+            <i class="bi bi-linkedin"></i> LinkedIn
+          </a>{{ end }}
+        </div>      
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
   <h2>Recent posts</h2>
-  {{ range first 5 (where (where .Site.Pages "Section" "blog") "IsSection" false ) }}
-  <article>
-    <header>
-      <h3>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a> 
-      </h3>
-    </header>
-    <p><em>Posted on {{ .Date.Format "January 2, 2006" }}</em></p>
-    <p>{{ .Summary }}</p>
-  </article>
-  {{ end }}
-
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    {{ range first 5 (where (where .Site.Pages "Section" "blog") "IsSection" false ) }}
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a> </h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Posted on {{ .Date.Format "January 2, 2006" }}</h6>
+          <p class="card-text">{{ .Summary }}</p>
+          <a href="{{ .RelPermalink }}" class="btn btn-primary">Continue reading ...</a>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
 </div>
 {{ end }}
