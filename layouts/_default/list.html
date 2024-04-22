@@ -2,17 +2,18 @@
 <div class="container">
   <h1>{{ .Title }}</h1>
 
-  <div>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
     {{ range .Pages }}
-      <article>
-        <header>
-          <h2>
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          </h2>
-        </header>
-
-        <p>{{ .Summary }}</p>
-      </article>
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a> </h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Posted on {{ .Date.Format "January 2, 2006" }}</h6>
+          <p class="card-text">{{ .Summary }}</p>
+          <a href="{{ .RelPermalink }}" class="btn btn-primary">Continue reading ...</a>
+        </div>
+      </div>
+    </div>
     {{ end }}
   </div>
 </div>
