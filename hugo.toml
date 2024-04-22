@@ -4,8 +4,15 @@ title = 'simonhege.fr'
 
 [params]
   description = 'Notes from a software architect'
-
-
+  name= 'Simon HEGE'
+  subtitle = 'Happy father of 2. Gopher. Road cyclist.'
+  job = 'Software Architect'
+  company = 'Amadeus'
+  companyLink= 'https://amadeus.com'
+  picture = 'https://avatars.githubusercontent.com/u/1748632?s=96&v=4'
+  twitter = 'simonhege'
+  github = 'simonhege'
+  linkedin = 'simonhege'
 
 [related]
   includeNewer = true
@@ -63,6 +70,9 @@ title = 'simonhege.fr'
 [[module.mounts]]
   source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
   target = "assets/js/vendor/bootstrap.min.js"
+[[module.mounts]]
+  source = "node_modules/bootstrap-icons/font/fonts"
+  target = "static/css/fonts"
 [[module.mounts]]
   source = "node_modules/mermaid/dist/mermaid.min.js"
   target = "assets/js/vendor/mermaid.min.js"
