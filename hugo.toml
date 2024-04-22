@@ -5,7 +5,7 @@ title = 'simonhege.fr'
 [params]
   description = 'Notes from a software architect'
   name= 'Simon HEGE'
-  subtitle = 'Happy father of 2. Gopher. Road cyclist.'
+  subtitle = 'Happy father of 2. Gopher. Road cyclist. This blog, its content and opinions are my own.'
   job = 'Software Architect'
   company = 'Amadeus'
   companyLink= 'https://amadeus.com'
