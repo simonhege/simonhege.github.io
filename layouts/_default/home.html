@@ -11,13 +11,13 @@
           Who am I?
         </div>  
         <div class="card-body">
-          <img src="{{ .Site.Params.Picture }}" class="rounded float-start me-2" style="height:5em; width: 5em;">
+          <img src="{{ .Site.Params.Picture }}" class="rounded float-end me-2" style="height:5em; width: 5em;">
           <h5 class="card-title">{{ .Site.Params.Name }}</h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">
-            {{ .Site.Params.Subtitle }}
+            {{ .Site.Params.Job }} at <a href="{{ .Site.Params.CompanyLink }}" target="_blank">{{ .Site.Params.Company }}</a>
           </h6>
           <h6 class="card-subtitle mb-2 text-body-secondary">
-            {{ .Site.Params.Job }} at <a href="{{ .Site.Params.CompanyLink }}" target="_blank">{{ .Site.Params.Company }}</a>
+            {{ .Site.Params.Subtitle }}
           </h6>
           {{ if .Site.Params.Github }}<a href="https://github.com/{{ .Site.Params.Github }}/" class="card-link" target="_blank">
             <i class="bi bi-github"></i> GitHub
