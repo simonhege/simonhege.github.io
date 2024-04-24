@@ -37,10 +37,10 @@ CAS is an opaque 8 byte buffer. 48 bits are for the physical clock (nano seconds
 Each mutation has its own CAS.
 
 ## Multi-document transactions
-In case if transaction, the uncommitted data is not propagated via XDCR. Changes will be eventually propagated, one by one. This means that only a partial
+In case a transaction is used, the uncommitted data is not propagated via XDCR. Changes will be eventually propagated, one by one. This means that only a partial
 view of the transaction might be seen from the targe side.
 
-Couchbase advise against bidirectional replication if transactions are used on the source. If used, they advise:
+Couchbase advise against bidirectional replication if transactions are in use in the application. If used, they advise:
 - to use timestamp based conflict resolution
 - to ensure application side that there will be no concurrent transactions on same set of document in 2 different clusters
 - to ensure, in case of failure, to always retry on same cluster
